@@ -7,8 +7,6 @@ class Daemonize {
 
     constructor(settings = {}) {
 
-        console.log(process.env);
-
         let {
 
             pid = '/tmp/node_daemon.pid',
@@ -27,7 +25,6 @@ class Daemonize {
 
         if (this.isDaemonized()) {
 
-            console.log('daemonized');
             this._createPid();
 
             process.on('SIGINT', this._destroyPid.bind(this));
