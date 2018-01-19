@@ -45,7 +45,7 @@ class Daemonize {
 
         try {
 
-            fs.openSync(pid, 'r');
+            fs.openSync(this._pid, 'r');
             throw new Error('Process all ready exists.');
 
         } catch (err) {
