@@ -32,6 +32,7 @@ class Daemonize {
 
             process.on('SIGINT', this._destroyPid.bind(this));
             process.on('SIGTERM', this._destroyPid.bind(this));
+            process.on('exit', this._destroyPid.bind(this));
 
         }
 
