@@ -27,8 +27,8 @@ class Daemonize {
 
             this._createPid();
 
-            process.on('SIGINT', this._destroyPid());
-            process.on('SIGTERM', this._destroyPid());
+            process.on('SIGINT', this._destroyPid);
+            process.on('SIGTERM', this._destroyPid);
 
         }
 
