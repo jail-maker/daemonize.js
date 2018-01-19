@@ -58,7 +58,7 @@ class Daemonize {
 
     _createPid() {
 
-        fs.fileWriteSync(this._pid, process.pid);
+        fs.writeFileSync(this._pid, process.pid);
 
     }
 
