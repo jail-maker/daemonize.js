@@ -7,6 +7,8 @@ class Daemonize {
 
     constructor(settings = {}) {
 
+        console.log(process.env);
+
         let {
 
             pid = '/tmp/node_daemon.pid',
@@ -25,10 +27,11 @@ class Daemonize {
 
         if (this.isDaemonized()) {
 
+            console.log('daemonized');
             this._createPid();
 
-            process.on('SIGINT', this._destroyPid);
-            process.on('SIGTERM', this._destroyPid);
+            process.on('SIGINT', this._destroyPid.bind(this));
+            process.on('SIGTERM', this._destroyPid.bind(this));
 
         }
 
@@ -74,7 +77,7 @@ class Daemonize {
 
         process.argv.shift();
         let argv = process.argv;
-        this._env._DAEMONIZED = "true"
+        this._env._DAEMONIZED = 1
 
         spawn(process.execPath, argv , {
             cwd: this._cwd,
