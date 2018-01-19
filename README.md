@@ -1,7 +1,7 @@
 # daemonize.js
 Simple library for create unix daemons
 
-```
+```javascript
 const daemonize = require('daemonize');
 
 if (process.argv.indexOf('-d')) {
