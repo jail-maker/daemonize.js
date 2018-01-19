@@ -2,19 +2,15 @@
 Simple library for create unix daemons
 
 ```javascript
-const daemonize = require('daemonize');
+const Daemonize = require('daemonize');
 
-if (process.argv.indexOf('-d')) {
+let settings = {
+    pid: "/var/run/programm.pid",
+    cwd: "/",
+};
 
-    process.argv = process.argv.filter(value => {
+let daemonize = new Daemonize(settings);
 
-        let flags = ['-d', '--daemonize'];
-        if (flags.indexOf(value) !== -1) return false;
-
-    });
-
-    daemonize();
-
-}
-
+if (process.argv.indexOf('-d')) daemonize.start();
+if (process.argv.indexOf('--daemonize')) daemonize.start();
 ```
