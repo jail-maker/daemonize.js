@@ -23,7 +23,7 @@ class Daemonize {
 
         this._checkPid();
 
-        if (isDaemonized()) {
+        if (this.isDaemonized()) {
 
             this._createPid();
 
