@@ -1,0 +1,9 @@
+{
+  "name": "daemonize",
+  "version": "1.0.0",
+  "description": "Simple library for create unix daemons",
+  "main": "index.js",
+  "repository": "https://github.com/jail-maker/daemonize.js",
+  "author": "Igor Bykov <igorb.dev@websm.io>",
+  "license": "MIT"
+}
